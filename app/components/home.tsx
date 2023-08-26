@@ -10,10 +10,10 @@ const home = () => {
          '
       >
          <h1 className='text-6xl mb-5'>
-            Helló, <span className='text-amber-400'>Nagy Tamás</span> vagyok,
+            Helló, <span className='text-amber-400'>Nagy Tamás</span> vagyok.
          </h1>
-         <h1 className='text-6xl mb-5'>frontend fejlesztő.</h1>
-         <div className='h-20'>
+         <h1 className='text-6xl mb-10'>Frontend fejlesztő.</h1>
+         <div className='h-20 self-center'>
             <DefaultButton text='Tovább' href='#about' />
          </div>
       </section>
