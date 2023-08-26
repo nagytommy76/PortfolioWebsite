@@ -8,12 +8,12 @@ const ResumeButton: React.FC<{ text: string; href: string; isBlank?: boolean }> 
    isBlank = false,
 }) => {
    return (
-      <button className={`${Styles.btn}`}>
-         <Link className={Styles.linkElement} href={href} target={isBlank ? '_blank' : ''}>
-            {text}
-         </Link>
-         <i className={Styles.iElement}></i>
-      </button>
+      <Link href={href} target={isBlank ? '_blank' : ''}>
+         <div className={Styles.btn}>
+            <span className={`${Styles.linkElement}`}>{text}</span>
+            <i className={Styles.iElement}></i>
+         </div>
+      </Link>
    )
 }
 
