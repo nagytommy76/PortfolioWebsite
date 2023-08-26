@@ -14,8 +14,8 @@
 .btn:hover {
    letter-spacing: 0.2rem;
    padding: 1.1rem 3.1rem;
-   background: #39ff14;
-   color: #39ff14;
+   background: #fcd34d;
+   color: #fcd34d;
    animation: box 3s infinite;
 }
 
@@ -26,47 +26,47 @@
    background: #272822;
 }
 
-.btn a {
+.linkElement {
    position: relative;
    z-index: 1;
 }
-.btn i {
+.iElement {
    position: absolute;
    inset: 0;
    display: block;
 }
 
-.btn i::before {
+.iElement::before {
    content: '';
    position: absolute;
-   width: 10px;
-   height: 2px;
+   width: 15px;
+   height: 8px;
    left: 80%;
    top: -2px;
-   border: 2px solid #39ff14;
+   border: 2px solid #fcd34d;
    background: #272822;
    transition: 0.2s;
 }
 
-.btn:hover i::before {
+.btn:hover .iElement::before {
    width: 15px;
    left: 20%;
    animation: move 3s infinite;
 }
 
-.btn i::after {
+.iElement::after {
    content: '';
    position: absolute;
-   width: 10px;
-   height: 2px;
+   width: 15px;
+   height: 8px;
    left: 20%;
    bottom: -2px;
-   border: 2px solid #39ff14;
+   border: 2px solid #fcd34d;
    background: #272822;
    transition: 0.2s;
 }
 
-.btn:hover i::after {
+.btn:hover .iElement::after {
    width: 15px;
    left: 80%;
    animation: move 3s infinite;
@@ -89,7 +89,7 @@
       box-shadow: #27272c;
    }
    50% {
-      box-shadow: 0 0 25px #39ff14;
+      box-shadow: 0 0 25px #fcd34d;
    }
    100% {
       box-shadow: #27272c;
