@@ -3,14 +3,12 @@ import MeImage from '@/assets/me_modified_final.jpg'
 
 import TechIcons from './includes/TechIcons'
 import DefaultButton from '@/src/ResumeButton/DefaultButton'
+import MainText from './includes/MainText'
 
 const about = () => {
    return (
       <section id='about' className='pt-20 h-screen text-slate-50 bg-hero bg-no-repeat bg-cover bg-center'>
-         <div className='w-48 mx-auto relative'>
-            <h1 className='text-6xl z-10 relative'>Rólam</h1>
-            <span className='h-5 bg-amber-600 w-40 absolute right-0 bottom-0 z-0'></span>
-         </div>
+         <MainText text='Rólam' />
          <div className='max-w-6xl mx-auto h-4/5 flex flex-row flex-wrap content-center items-center justify-center'>
             <div className='w-2/4 flex flex-wrap justify-center pr-10'>
                <Image
