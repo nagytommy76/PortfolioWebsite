@@ -1,28 +1,26 @@
 import Image from 'next/image'
 import MeImage from '@/assets/me_modified_final.jpg'
 
+import TechIcons from './includes/TechIcons'
 import DefaultButton from '@/src/ResumeButton/DefaultButton'
 
 const about = () => {
    return (
-      <section
-         id='about'
-         className='text-slate-50 h-full bg-hero bg-no-repeat bg-cover bg-center bg-neutral-900'
-      >
+      <section id='about' className='pt-20 h-screen text-slate-50 bg-hero bg-no-repeat bg-cover bg-center'>
          <div className='w-48 mx-auto relative'>
             <h1 className='text-6xl z-10 relative'>Rólam</h1>
             <span className='h-5 bg-amber-600 w-40 absolute right-0 bottom-0 z-0'></span>
          </div>
-         <div className='max-w-6xl mx-auto h-4/5 flex flex-row flex-wrap content-center justify-center'>
-            <div className='w-2/4 flex flex-col flex-wrap content-center justify-center'>
+         <div className='max-w-6xl mx-auto h-4/5 flex flex-row flex-wrap content-center items-center justify-center'>
+            <div className='w-2/4 flex flex-wrap justify-center pr-10'>
                <Image
-                  className='rounded-full bg-cover w-64 h-64'
+                  className='rounded-full bg-cover w-64 h-64 mb-10'
                   src={MeImage}
                   height={250}
                   width={250}
                   alt='Nagy Tamás Képe'
                />
-               <p className='text-xl leading-8 text-left'>
+               <p className='text-xl leading-8 text-left mb-5'>
                   Jelenlegi tudásom nagy részét autodidakta módon, Udemy kurzusok segítségével, valamint hobby
                   projectek elkészítésével szereztem. Körülbelül 2 éve foglalkozom rendszeresen programozással
                   szabadidőmben. Kezdőként Forntend (React) területen szeretnék elhelyezkedni, illetve
@@ -37,14 +35,7 @@ const about = () => {
                   text='Önéletrajz'
                />
             </div>
-            <div className='w-2/4'>
-               <h1>sadsdaas</h1>
-               <p>smmi</p>
-               <p>smmi</p>
-               <p>smmi</p>
-               <p>smmi</p>
-               <p>smmi</p>
-            </div>
+            <TechIcons />
          </div>
       </section>
    )

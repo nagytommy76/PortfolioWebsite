@@ -5,7 +5,7 @@ const home = () => {
       <section
          id='home'
          className='
-            text-slate-50 tracking-widest font-light h-screen bg-hero bg-no-repeat bg-cover bg-center bg-neutral-900
+            text-slate-50 tracking-widest font-light h-screen bg-hero bg-no-repeat bg-cover bg-center
             flex flex-wrap flex-col justify-center content-center
          '
       >
@@ -14,7 +14,7 @@ const home = () => {
          </h1>
          <h1 className='text-6xl mb-10'>Frontend fejlesztő.</h1>
          <div className='h-20 self-center'>
-            <DefaultButton text='Tovább' href='#about' />
+            <DefaultButton text='Tudj meg többet' href='#about' />
          </div>
       </section>
    )
