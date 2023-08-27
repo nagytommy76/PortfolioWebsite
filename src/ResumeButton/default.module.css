@@ -1,4 +1,5 @@
 .btn {
+   display: inline-block;
    position: relative;
    background: #444;
    color: #fff;
