@@ -8,23 +8,40 @@ const SingleProject: React.FC<{
    projectHref: string
    githubHref: string
    description: string
+   headText: string
+   imageLink: string
    isReverse?: boolean
-}> = ({ projectHref, githubHref, description, isReverse = false }) => {
+   children?: React.ReactNode
+   isUnderDev?: boolean
+}> = ({
+   projectHref,
+   githubHref,
+   description,
+   headText,
+   imageLink,
+   isReverse = false,
+   isUnderDev = false,
+   children,
+}) => {
    return (
-      <div className={`mt-24 flex ${isReverse ? 'flex-row-reverse' : ''}`}>
-         <Link className='transition-all hover:scale-[105%]' href={projectHref} target='_blank'>
-            <Image
-               src='https://res.cloudinary.com/domsczfqu/image/upload/v1/nagytamas93/CompStoreMERN/welcome_cwzwvv'
-               alt='ComputerStore webáruház'
-               width={800}
-               height={600}
-            />
+      <div className={`mt-24 w-full flex flex-wrap ${isReverse ? 'flex-row-reverse' : ''} justify-between`}>
+         <Link
+            className='relative w-auto transition-all hover:scale-[98%]'
+            href={projectHref}
+            target='_blank'
+         >
+            <Image src={imageLink} alt='ComputerStore webáruház' width={700} height={600} />
+            {children && (
+               <div className='px-3 min-w-[100px] h-12 flex flex-wrap items-center absolute bottom-0 right-0 bg-slate-600 bg-opacity-80'>
+                  {children}
+               </div>
+            )}
          </Link>
-         <div className='ml-10 flex flex-col justify-between'>
-            <h1 className='text-4xl tracking-widest'>Computer Store webáruház</h1>
+         <div className={`w-1/3 flex flex-col justify-between`}>
+            <h1 className='text-5xl tracking-wide'>{headText}</h1>
             <p className='font-semibold'>{description}</p>
             <span className='h-28 flex flex-col justify-between'>
-               <LinkButton displayText='Élő verzió' href={projectHref} />
+               {!isUnderDev && <LinkButton displayText='Élő verzió' href={projectHref} />}
                <LinkButton displayText='GitHub' href={githubHref} iconElement={GitHubIcon} />
             </span>
          </div>
