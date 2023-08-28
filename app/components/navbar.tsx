@@ -8,9 +8,9 @@ import HoverLink from '../../src/hoverLink'
 
 const navbar = () => {
    return (
-      <header className='bg-transparent text-white'>
-         <nav className='h-20 w-full fixed top-0 flex flex-wrap flex-row content-center justify-around'>
-            <section className='w-1/3 flex flex-wrap flex-row content-center justify-between text-xl'>
+      <header className='bg-transparent text-white z-50'>
+         <nav className='h-20 w-full fixed top-0 flex flex-wrap flex-row content-center justify-around z-50'>
+            <section className='w-1/3 flex flex-wrap flex-row content-center justify-between text-xl z-50'>
                <HoverLink href='#home' linkText='Logó' />
                <HoverLink href='#about' linkText='Rólam' />
                <HoverLink href='#projects' linkText='Projektek' />

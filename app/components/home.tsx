@@ -1,4 +1,5 @@
 import DefaultButton from '@/src/ResumeButton/DefaultButton'
+// import Canvas from '@/src/Canvas/Canvas'
 
 const home = () => {
    return (
@@ -16,6 +17,7 @@ const home = () => {
          <div className='h-20 self-center'>
             <DefaultButton text='Tudj meg többet' href='#about' />
          </div>
+         {/* <Canvas /> */}
       </section>
    )
 }

@@ -27,11 +27,13 @@ const about = () => {
                   megismerkedni a mobilfejlesztéssel is (ReactNative vagy Flutter). Az angol tudásom
                   szövegértésben, olvasásban jó, de a kommunikációban fejlődnöm kell.
                </p>
-               <DefaultButton
-                  isBlank={true}
-                  href='https://drive.google.com/drive/folders/1-kAtpIRgO-xTEtikH-HyR4HCJm_HuhFu?usp=sharing'
-                  text='Önéletrajz'
-               />
+               <div className='h-20'>
+                  <DefaultButton
+                     isBlank={true}
+                     href='https://drive.google.com/drive/folders/1-kAtpIRgO-xTEtikH-HyR4HCJm_HuhFu?usp=sharing'
+                     text='Önéletrajz'
+                  />
+               </div>
             </div>
             <TechIcons />
          </div>

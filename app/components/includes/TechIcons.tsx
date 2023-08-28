@@ -20,9 +20,9 @@ const TechIcons = () => {
             <StackIcon alt='CSS3' displayText='CSS3' src={CSS3} />
             <StackIcon alt='HTML5' displayText='HTML5' src={HTML5} />
             <StackIcon alt='JavaScript' displayText='JavaScript' src={JavaScript} />
+            <StackIcon alt='TypeScript' displayText='TypeScript' src={TypeScript} />
          </div>
          <div className='flex flex-wrap flex-col justify-evenly'>
-            <StackIcon alt='TypeScript' displayText='TypeScript' src={TypeScript} />
             <StackIcon alt='React' displayText='React' src={ReactIcon} />
             <StackIcon alt='NextJs' displayText='Next.js' src={NextJs} />
             <StackIcon alt='NodeJs' displayText='Node.js' src={NodeJs} />
