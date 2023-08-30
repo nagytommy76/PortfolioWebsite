@@ -17,6 +17,12 @@ const config: Config = {
          colors: {
             'main-bg': '#292929',
          },
+         keyframes: {
+            bounce: {
+               '0%, 100%': { transform: 'translateY(0);' },
+               '50%': { transform: 'translateY(-25%);' },
+            },
+         },
       },
    },
    plugins: [],
