@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import MainText from '../components/includes/MainText'
-import SingleProject from '../components/includes/SingleProject'
+import SingleProject from '../components/SingleProject/SingleProject'
 
 import TypeScript from '@/icons/typescript.svg'
 import ReactIcon from '@/icons/react.svg'
@@ -11,7 +11,7 @@ import NextJsIcon from '@/icons/nextjs.svg'
 
 const Projects = () => {
    return (
-      <section id='projects' className='h-screen max-w-6xl mx-auto pt-20 text-white'>
+      <section id='projects' className='min-h-screen max-w-6xl mx-auto mb-16 pt-20 text-white'>
          <MainText text='Projektek' />
          <SingleProject
             headText='Facebook clone app'

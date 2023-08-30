@@ -5,11 +5,11 @@ import Projects from './projects/page'
 
 export default function Home() {
    return (
-      <main className=''>
+      <>
          <Navbar />
          <HomePage />
          <About />
          <Projects />
-      </main>
+      </>
    )
 }
