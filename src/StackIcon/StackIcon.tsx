@@ -7,7 +7,7 @@ const StackIcon: React.FC<{ src: string; alt: string; displayText: string }> = (
 }) => {
    return (
       <div className='w-28 h-28 flex flex-col flex-wrap justify-evenly content-center items-center text-center'>
-         <Image alt={alt} src={src} width={70} height={70} />
+         <Image className='fill-slate-50' alt={alt} src={src} width={70} height={70} />
          <p className='text-sm uppercase font-semibold'>{displayText}</p>
       </div>
    )
