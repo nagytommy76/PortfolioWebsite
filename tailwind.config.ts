@@ -23,6 +23,9 @@ const config: Config = {
                '50%': { transform: 'translateY(-25%);' },
             },
          },
+         screens: {
+            sm: { max: '639px' },
+         },
       },
    },
    plugins: [],
