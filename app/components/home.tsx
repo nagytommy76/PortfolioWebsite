@@ -5,15 +5,13 @@ const home = () => {
    return (
       <section
          id='home'
-         className='
-            text-slate-50 tracking-widest font-light h-screen bg-hero bg-no-repeat bg-cover bg-center
-            flex flex-wrap flex-col justify-center content-center
+         className='text-slate-50 tracking-widest font-light h-screen w-full flex flex-wrap flex-col justify-center content-center
          '
       >
-         <h1 className='text-6xl mb-5'>
-            Helló, <span className='text-amber-400'>Nagy Tamás</span> vagyok.
+         <h1 className='text-6xl mb-5 text-center sm:text-3xl sm:mb-2'>
+            <span className='text-amber-400'>Nagy Tamás</span> vagyok.
          </h1>
-         <h1 className='text-6xl mb-10'>Frontend fejlesztő.</h1>
+         <h1 className='text-6xl mb-10 text-center sm:text-3xl sm:mb-14'>Frontend fejlesztő.</h1>
          <div className='h-20 self-center'>
             <DefaultButton text='Tudj meg többet' href='#about' />
          </div>
