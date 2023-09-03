@@ -6,7 +6,7 @@ import Meatball from '@/components/Projects/Meatball'
 
 const Projects = () => {
    return (
-      <section id='projects' className='relative min-h-screen max-w-6xl mx-auto mb-16 pt-20 text-white'>
+      <section id='projects' className='min-h-screen max-w-6xl mx-auto mb-16 pt-20 text-white '>
          <MainText text='Projektek' />
          <Facebook />
          <CompStore />

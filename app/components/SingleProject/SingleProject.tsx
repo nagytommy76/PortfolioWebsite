@@ -23,7 +23,11 @@ const SingleProject: React.FC<{
    children,
 }) => {
    return (
-      <div className={`mt-24 w-full flex flex-wrap ${isReverse ? 'flex-row-reverse' : ''} justify-between`}>
+      <div
+         className={`mt-24 w-full flex flex-wrap ${
+            isReverse ? 'flex-row-reverse' : ''
+         } justify-between sm:flex-col`}
+      >
          <div className='relative w-auto cursor-pointer transition-all hover:scale-[98%]'>
             {ProjectImageComponent}
             {children && (
@@ -36,14 +40,14 @@ const SingleProject: React.FC<{
                </div>
             )}
          </div>
-         <div className={`w-1/3 flex flex-col justify-between`}>
-            <h1 className='text-5xl tracking-wide'>{headText}</h1>
-            <p className='font-semibold'>{description}</p>
+         <div className={`w-1/3 flex flex-col justify-between sm:w-[95%] sm:mt-3 sm:mx-auto `}>
+            <h1 className='text-5xl tracking-wide sm:text-3xl sm:mb-3'>{headText}</h1>
+            <p className='font-semibold sm:text-sm sm:mb-4 sm:font-normal sm:text-justify'>{description}</p>
             <span className='h-24 flex flex-col justify-between'>
                {!isUnderDev ? (
                   <LinkButton displayText='Élő verzió' href={projectHref} />
                ) : (
-                  <p className='text-2xl'>{isUnderDevText}</p>
+                  <p className='text-2xl sm:text-base'>{isUnderDevText}</p>
                )}
                <LinkButton displayText='GitHub' href={githubHref} iconElement={GitHubIcon} />
             </span>

@@ -12,6 +12,13 @@
    transition: 0.2s;
 }
 
+@media (max-width: 639px) {
+   .btn {
+      font-size: 0.75rem;
+      padding: 1rem 3rem;
+   }
+}
+
 .btn:hover {
    letter-spacing: 0.2rem;
    padding: 1.1rem 3.1rem;
