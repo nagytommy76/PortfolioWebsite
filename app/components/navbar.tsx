@@ -52,9 +52,9 @@ const Navbar = () => {
             <nav
                className='
                text-white
-               bg-zinc-800 opacity-95 shadow-md h-[75px] w-full fixed top-0
+               bg-neutral-800 bg-opacity-60 shadow-md h-[75px] w-full fixed top-0
                flex flex-wrap flex-row content-center justify-around z-50
-               sm:h-screen sm:opacity-100 sm:flex-col sm:justify-center
+               sm:h-screen sm:bg-opacity-100 sm:flex-col sm:justify-center
                '
             >
                {isMobile && (
@@ -66,19 +66,18 @@ const Navbar = () => {
                )}
                <section
                   className='
-                  w-1/3 flex flex-wrap flex-row content-center justify-between text-xl z-50
+                  w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between text-xl z-50
                   sm:w-screen sm:flex-col sm:h-[40%] sm:text-center
                   '
                >
                   <HoverLink onClick={handleCloseNavbar} href='#home' linkText='Logó' />
                   <HoverLink onClick={handleCloseNavbar} href='#about' linkText='Rólam' />
                   <HoverLink onClick={handleCloseNavbar} href='#projects' linkText='Projektek' />
-                  <HoverLink onClick={handleCloseNavbar} href='/' linkText='Skillek' />
-                  <HoverLink onClick={handleCloseNavbar} href='/' linkText='Cert' />
+                  <HoverLink onClick={handleCloseNavbar} href='#certificates' linkText='Tanúsítványok' />
                </section>
                <section
                   className='
-                  w-36 flex flex-wrap flex-row justify-around content-center items-center
+                  w-40 flex flex-wrap flex-row justify-around content-center items-center
                    sm:justify-around sm:mx-auto sm:mt-11'
                >
                   <ContactIcons />
