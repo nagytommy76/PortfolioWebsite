@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import ProjectImage from '../components/SingleProject/ProjectImage'
 
 import MainText from '../components/includes/MainText'
@@ -15,15 +14,6 @@ const Certificates = () => {
                   imageNames={['ReactCertENG_gjbhsf']}
                   imageWidth={355}
                   imageHeight={600}
-               />
-            </div>
-            <div className='cursor-pointer transition-all hover:scale-[98%]'>
-               <ProjectImage
-                  alt='React - The Complete Guide (incl Hooks, React Router, Redux)'
-                  folder='certificates'
-                  imageNames={['React_udemy_cert_cah6ay']}
-                  imageWidth={670}
-                  imageHeight={805}
                />
             </div>
          </div>
