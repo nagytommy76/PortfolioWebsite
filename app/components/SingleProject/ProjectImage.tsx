@@ -7,11 +7,13 @@ import CloseIcon from '@mui/icons-material/Close'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 
-const ProjectImage: React.FC<{ folder: string; imageNames: string[]; alt: string }> = ({
-   folder,
-   imageNames,
-   alt,
-}) => {
+const ProjectImage: React.FC<{
+   folder: string
+   imageNames: string[]
+   alt: string
+   imageWidth?: number
+   imageHeight?: number
+}> = ({ folder, imageNames, alt, imageHeight = 600, imageWidth = 700 }) => {
    const [openImage, setOpenImage] = useState<boolean>(false)
    const [currentPicIndex, setCurrentPicIndex] = useState<number>(0)
 
@@ -62,8 +64,8 @@ const ProjectImage: React.FC<{ folder: string; imageNames: string[]; alt: string
                />
                <div className='w-screen h-screen flex items-center justify-center'>
                   <Image
-                     sizes='(max-width: 400px) 400px, (max-width: 1200px) 1200px, 100vw'
-                     className=''
+                     sizes='(max-width: 400px) 400px'
+                     className='h-screen object-scale-down'
                      src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[currentPicIndex]}`}
                      alt={alt}
                      width={1920}
@@ -81,8 +83,8 @@ const ProjectImage: React.FC<{ folder: string; imageNames: string[]; alt: string
                className=''
                src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[0]}`}
                alt={alt}
-               width={700}
-               height={600}
+               width={imageWidth}
+               height={imageHeight}
             />
          </div>
       </>
