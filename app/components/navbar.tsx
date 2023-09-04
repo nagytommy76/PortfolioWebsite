@@ -1,5 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import CloseIcon from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -8,6 +10,8 @@ import Collapse from '@mui/material/Collapse'
 
 import ContactIcons from '@/components/includes/ContactIcons'
 import HoverLink from '../../src/hoverLink'
+
+import NTLogo2 from '../../assets/NTLogo2.jpg'
 
 const Navbar = () => {
    const [isOpen, setIsOpen] = useState<boolean>(true)
@@ -66,11 +70,21 @@ const Navbar = () => {
                )}
                <section
                   className='
-                  w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between text-xl z-50
+                  w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between items-center text-xl z-50
                   sm:w-screen sm:flex-col sm:h-[40%] sm:text-center
                   '
                >
-                  <HoverLink onClick={handleCloseNavbar} href='#home' linkText='Logó' />
+                  <Link href={'#home'}>
+                     <Image
+                        className='rounded-full sm:w-[170px]'
+                        src={NTLogo2}
+                        width={50}
+                        height={50}
+                        alt='Nagy Tamás logó'
+                        sizes='(max-width: 500px) 200px'
+                     />
+                  </Link>
+                  {/* <HoverLink onClick={handleCloseNavbar} href='#home' linkText='Logó' /> */}
                   <HoverLink onClick={handleCloseNavbar} href='#about' linkText='Rólam' />
                   <HoverLink onClick={handleCloseNavbar} href='#projects' linkText='Projektek' />
                   <HoverLink onClick={handleCloseNavbar} href='#certificates' linkText='Tanúsítványok' />
