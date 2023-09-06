@@ -1,21 +1,22 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { CSSTransition } from 'react-transition-group'
+import styles from './navbar.module.css'
 
 import CloseIcon from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
 
-import Collapse from '@mui/material/Collapse'
-
 import ContactIcons from '@/components/includes/ContactIcons'
-import HoverLink from '../../src/hoverLink'
+import HoverLink from '../../../src/hoverLink'
 
-import NTLogo2 from '../../assets/NTLogo2.jpg'
+import NTLogo2 from '@/assets/NTLogo2.jpg'
 
 const Navbar = () => {
    const [isOpen, setIsOpen] = useState<boolean>(true)
    const [isMobile, setIsMobile] = useState<boolean>(false)
+   const navbarRef = useRef<HTMLElement>(null)
 
    const handleCloseNavbar = useCallback(() => {
       isMobile && setIsOpen(false)
@@ -51,9 +52,22 @@ const Navbar = () => {
                className={`z-[50] fixed right-5 top-5 text-amber-500 ${isMobile ? 'flex' : 'md:hidden'}`}
             />
          )}
-         {/* <Collapse in={isMobile ? isOpen : true}> */}
-         <Collapse in={isOpen}>
+         <CSSTransition
+            appear
+            in={isOpen}
+            unmountOnExit
+            mountOnEnter
+            timeout={300}
+            nodeRef={navbarRef}
+            classNames={{
+               enter: styles.NavEnter,
+               enterActive: styles.NavEnterActive,
+               exit: styles.NavExit,
+               exitActive: styles.NavExitActive,
+            }}
+         >
             <nav
+               ref={navbarRef}
                className='
                text-white
                bg-neutral-800 bg-opacity-60 shadow-md h-[75px] w-full fixed top-0
@@ -70,12 +84,13 @@ const Navbar = () => {
                )}
                <section
                   className='
-                  w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between items-center text-xl z-50
-                  sm:w-screen sm:flex-col sm:h-[40%] sm:text-center
-                  '
+                     w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between items-center text-xl z-50
+                     sm:w-screen sm:flex-col sm:h-[40%] sm:text-center
+                     '
                >
                   <Link href={'#home'}>
                      <Image
+                        onClick={handleCloseNavbar}
                         className='rounded-full sm:w-[170px]'
                         src={NTLogo2}
                         width={50}
@@ -84,20 +99,19 @@ const Navbar = () => {
                         sizes='(max-width: 500px) 200px'
                      />
                   </Link>
-                  {/* <HoverLink onClick={handleCloseNavbar} href='#home' linkText='Logó' /> */}
                   <HoverLink onClick={handleCloseNavbar} href='#about' linkText='Rólam' />
                   <HoverLink onClick={handleCloseNavbar} href='#projects' linkText='Projektek' />
                   <HoverLink onClick={handleCloseNavbar} href='#certificates' linkText='Tanúsítványok' />
                </section>
                <section
                   className='
-                  w-40 flex flex-wrap flex-row justify-around content-center items-center
-                   sm:justify-around sm:mx-auto sm:mt-11'
+                     w-40 flex flex-wrap flex-row justify-around content-center items-center
+                     sm:justify-around sm:mx-auto sm:mt-11'
                >
                   <ContactIcons />
                </section>
             </nav>
-         </Collapse>
+         </CSSTransition>
       </>
    )
 }
