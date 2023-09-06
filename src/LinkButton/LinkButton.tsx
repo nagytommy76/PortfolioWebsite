@@ -25,8 +25,8 @@ const LinkButton: React.FC<{ displayText: string; href: string; iconElement?: an
                   className='ml-3 sepia-0 invert-[100%] saturate-[600%] brightness-95 contrast-75'
                   src={iconElement}
                   alt='Icon'
-                  width={30}
-                  height={30}
+                  width={25}
+                  height={25}
                />
             )}
          </p>
