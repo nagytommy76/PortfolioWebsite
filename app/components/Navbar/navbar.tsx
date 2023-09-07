@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useCallback, useRef } from 'react'
+import useNavbar from './Hooks/useNavbar'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CSSTransition } from 'react-transition-group'
@@ -14,34 +14,7 @@ import HoverLink from '../../../src/hoverLink'
 import NTLogo2 from '@/assets/NTLogo2.jpg'
 
 const Navbar = () => {
-   const [isOpen, setIsOpen] = useState<boolean>(true)
-   const [isMobile, setIsMobile] = useState<boolean>(false)
-   const navbarRef = useRef<HTMLElement>(null)
-
-   const handleCloseNavbar = useCallback(() => {
-      isMobile && setIsOpen(false)
-   }, [isMobile])
-   const handleOpenNavbar = () => setIsOpen(true)
-
-   const handleWindowSizeChange = useCallback(() => {
-      if (window.innerWidth <= 639) {
-         setIsMobile(true)
-         handleCloseNavbar()
-      } else {
-         handleOpenNavbar()
-         setIsMobile(false)
-      }
-   }, [handleCloseNavbar])
-
-   useEffect(() => {
-      handleWindowSizeChange()
-      window.addEventListener('resize', handleWindowSizeChange)
-      window.addEventListener('load', handleWindowSizeChange)
-      return () => {
-         window.removeEventListener('resize', handleWindowSizeChange)
-         window.removeEventListener('load', handleWindowSizeChange)
-      }
-   }, [handleWindowSizeChange])
+   const { isMobile, isOpen, navbarRef, handleCloseNavbar, handleOpenNavbar } = useNavbar()
 
    return (
       <>
@@ -71,8 +44,8 @@ const Navbar = () => {
                className='
                text-white
                bg-neutral-800 bg-opacity-60 shadow-md h-[75px] w-full fixed top-0
-               flex flex-wrap flex-row content-center justify-around z-50
-               sm:h-screen sm:bg-opacity-100 sm:flex-col sm:justify-center
+                  flex flex-wrap flex-row content-center justify-around z-50
+                  sm:h-screen sm:bg-opacity-100 sm:flex-col sm:justify-center               
                '
             >
                {isMobile && (
@@ -84,7 +57,7 @@ const Navbar = () => {
                )}
                <section
                   className='
-                     w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between items-center text-xl z-50
+                  w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between items-center text-xl z-50
                      sm:w-screen sm:flex-col sm:h-[40%] sm:text-center
                      '
                >
@@ -105,8 +78,8 @@ const Navbar = () => {
                </section>
                <section
                   className='
-                     w-40 flex flex-wrap flex-row justify-around content-center items-center
-                     sm:justify-around sm:mx-auto sm:mt-11'
+                  w-40 flex flex-wrap flex-row justify-around content-center items-center
+                  sm:justify-around sm:mx-auto sm:mt-11'
                >
                   <ContactIcons />
                </section>
