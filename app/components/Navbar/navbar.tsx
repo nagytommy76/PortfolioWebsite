@@ -57,14 +57,14 @@ const Navbar = () => {
                )}
                <section
                   className='
-                  w-1/2 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-between items-center text-xl z-50
-                     sm:w-screen sm:flex-col sm:h-[40%] sm:text-center
+                  w-1/3 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-evenly items-center text-xl z-50
+                     sm:w-screen sm:flex-col sm:h-[50%] sm:text-center
                      '
                >
                   <Link href={'#home'}>
                      <Image
                         onClick={handleCloseNavbar}
-                        className='rounded-full sm:w-[170px]'
+                        className='rounded-full sm:w-[190px]'
                         src={NTLogo2}
                         width={50}
                         height={50}
