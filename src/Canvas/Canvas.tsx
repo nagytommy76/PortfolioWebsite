@@ -1,6 +1,5 @@
 'use client'
-import { useRef, useEffect, useState } from 'react'
-
+import { useRef, useEffect, useState, useCallback } from 'react'
 interface IDotArray {
    [index: number]: IDotArray
    x: number
@@ -15,29 +14,35 @@ interface IDots {
    numberOfDots: number
    distance: number
    d_radius: number
-   array: IDotArray[]
+}
+
+interface IMousePosition {
+   x: number
+   y: number
 }
 
 class Dot {
    canvas: HTMLCanvasElement
    ctx: CanvasRenderingContext2D
    mousePosition: { x: number; y: number }
-   /*dots: IDots*/
    x: number
    y: number
    vx: number
    vy: number
    radius: number
    colorDot: string[]
-   color: any
-   constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D /*dots: IDots*/) {
+   color: string
+   constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, mousePosition: IMousePosition) {
       this.canvas = canvas
+      this.canvas.width = document.body.scrollWidth
+      this.canvas.height = window.innerHeight
+      this.canvas.style.display = 'block'
+
       this.ctx = ctx
-      this.mousePosition = {
-         x: (30 * canvas.width) / 100,
-         y: (30 * canvas.height) / 100,
-      }
-      /*this.dots = dots*/
+      this.ctx.lineWidth = 0.3
+      this.ctx.strokeStyle = 'rgb(81, 162, 233)'
+      this.mousePosition = mousePosition
+      console.log(mousePosition)
       this.colorDot = [
          'rgb(81, 162, 233)',
          'rgb(81, 162, 233)',
@@ -51,6 +56,7 @@ class Dot {
       this.vx = -0.5 + Math.random()
       this.vy = -0.5 + Math.random()
       this.radius = Math.random() * 1.5
+      // this.color = 'hsl(' + 360 * Math.random() + ', 50%, 50%)'
       this.color = this.colorDot[Math.floor(Math.random() * this.colorDot.length)]
    }
 
@@ -67,24 +73,22 @@ class Dot {
       this.ctx.fill()
    }
 
-   animate(dot: IDots) {
+   animate(dot: IDotArray[], numberOfDots: number) {
       // dont animate the first dot, it will follow mouse
-      //   let dots = { nb: 575, distance: 60, d_radius: 280, array: [] }
-      for (let i = 1; i < dot.numberOfDots; i++) {
-         console.log(dot.array)
-         if (dot.array[i].y < 0 || dot.array[i].y > this.canvas.height) {
-            dot.array[i].vx = dot.array[i].vx
-            dot.array[i].vy = -dot.array[i].vy
-         } else if (dot.array[i].x < 0 || dot.array[i].x > this.canvas.width) {
-            dot.array[i].vx = -dot.array[i].vx
-            dot.array[i].vy = dot.array[i].vy
+      for (let i = 1; i < numberOfDots; i++) {
+         if (dot[i].y < 0 || dot[i].y > this.canvas.height) {
+            dot[i].vx = dot[i].vx
+            dot[i].vy = -dot[i].vy
+         } else if (dot[i].x < 0 || dot[i].x > this.canvas.width) {
+            dot[i].vx = -dot[i].vx
+            dot[i].vy = dot[i].vy
          }
-         dot.array[i].x += dot.array[i].vx
-         dot.array[i].y += dot.array[i].vy
+         dot[i].x += dot[i].vx
+         dot[i].y += dot[i].vy
       }
    }
 
-   line(dotArray: IDotArray, numberOfDots: number, distance: number, d_radius: number) {
+   line(dotArray: IDotArray[], numberOfDots: number, distance: number, d_radius: number) {
       for (let i = 0; i < numberOfDots; i++) {
          for (let j = 0; j < numberOfDots; j++) {
             const i_dot = dotArray[i] as IDotArray | undefined
@@ -106,14 +110,13 @@ class Dot {
                   this.ctx.beginPath()
                   this.ctx.moveTo(i_dot.x, i_dot.y)
                   this.ctx.lineTo(j_dot.x, j_dot.y)
-
                   // make the fill color fade out the further you are from the mouse
                   const dotDistance =
                      ((i_dot.x - this.mousePosition.x) ** 2 + (i_dot.y - this.mousePosition.y) ** 2) ** 0.5
                   let distanceRatio = dotDistance / d_radius
 
                   // make it so it doesnt fade out completely
-                  distanceRatio -= 0.3
+                  distanceRatio -= 0.5
                   if (distanceRatio < 0) {
                      distanceRatio = 0
                   }
@@ -131,21 +134,16 @@ class Dot {
 
 const Canvas = () => {
    const canvasRef = useRef<HTMLCanvasElement>(null)
-   const [mouse, setMouse] = useState({ x: 100, y: 100 })
+   const [htmlCanvas, setHtmlCanvas] = useState<HTMLCanvasElement | null>(null)
+   const [ctxState, setCtxState] = useState<CanvasRenderingContext2D | null>(null)
+   const [mouse, setMouse] = useState<IMousePosition>({
+      x: Math.random() * 1000,
+      y: Math.random() * 1000,
+   })
    const [dots, setDots] = useState<IDots>({
       numberOfDots: 600,
       distance: 70,
       d_radius: 300,
-      array: [
-         {
-            x: Math.random() * 1000,
-            y: Math.random() * 1000,
-            vx: -0.5 + Math.random(),
-            vy: -0.5 + Math.random(),
-            radius: Math.random() * 1.5,
-            color: 'rgb(81, 162, 233)',
-         },
-      ],
    })
    const [dotArray, setDotArray] = useState<IDotArray[]>([
       {
@@ -153,58 +151,99 @@ const Canvas = () => {
          y: Math.random() * 1000,
          vx: -0.5 + Math.random(),
          vy: -0.5 + Math.random(),
-         radius: Math.random() * 1.5,
-         color: 'rgb(81, 162, 233)',
+         radius: 500.5,
+         color: 'rgb(20, 20, 20)',
       },
    ])
 
-   function createDots() {}
+   const InitDots = useCallback(
+      (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+         let createdArray: IDotArray[] = []
+         for (let i = 0; i < dots.numberOfDots; i++) {
+            const createdDot = new Dot(canvas, ctx, mouse)
+            createdArray.push({
+               color: createdDot.color,
+               radius: createdDot.radius,
+               vx: createdDot.vx,
+               vy: createdDot.vy,
+               x: createdDot.x,
+               y: createdDot.y,
+            })
+            createdDot.create()
+         }
+         return createdArray
+      },
+      [dots.numberOfDots, mouse]
+   )
 
    useEffect(() => {
       const canvas = canvasRef.current
       if (canvas == null) return // current may be null
       const ctx = canvas.getContext('2d')
       if (ctx == null) return // context may be null
-      //Our first draw
+      setHtmlCanvas(canvas)
+      setCtxState(ctx)
+      // Create Dots
+      setDotArray([...dotArray, ...InitDots(canvas, ctx)])
+   }, [ctxState, mouse, InitDots])
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      //   console.time('idő: ')
-      for (let i = 0; i < dots.numberOfDots; i++) {
-         //  console.count('For ciklus lefutva: ')
-         const createdDot = new Dot(canvas, ctx)
-         console.log(createdDot)
-
-         setDotArray([
-            ...dotArray,
-            {
-               color: 'rgb(199, 55, 23)',
-               radius: createdDot.radius,
-               vx: createdDot.vx,
-               vy: createdDot.vy,
-               x: createdDot.x,
-               y: createdDot.y,
-            },
-         ])
+   const createDots = useCallback(() => {
+      if (htmlCanvas !== null && ctxState !== null && dotArray.length > 10) {
+         ctxState.clearRect(0, 0, htmlCanvas.width, htmlCanvas.height)
+         const createdDot = new Dot(htmlCanvas, ctxState, mouse)
+         // createdDot.color = '#51a2e9'
+         createdDot.color = '#38d433'
          createdDot.create()
+         createdDot.line(dotArray, dots.numberOfDots, dots.distance, dots.d_radius)
+         createdDot.animate(dotArray, dots.numberOfDots)
       }
-      console.log(dotArray)
-      //   console.timeLog('idő: ')
-      //   setTimeout(() => {
-      //      const createdDot = new Dot(canvas, ctx)
+   }, [htmlCanvas, ctxState, dotArray, mouse, dots.d_radius, dots.distance, dots.numberOfDots])
 
-      //      createdDot.line(dots.array[0], dots.numberOfDots, dots.distance, dots.d_radius)
-      //      createdDot.animate(dots)
-      //   }, 1000)
-   }, [])
+   useEffect(() => {
+      if (ctxState == null) return
+      if (htmlCanvas == null) return
+      createDots()
+      // const draw = setInterval(createDots, 1000 / 30)
+      // return () => clearInterval(draw)
+   }, [createDots, ctxState, htmlCanvas])
+
+   const onMouseMove = (event: React.MouseEvent) => {
+      setMouse({
+         x: event.pageX,
+         y: event.pageY,
+      })
+      try {
+         // want the first dot to follow the mouse
+
+         const handleMarkComplete = () => {
+            // 1. Find the todo with the provided id
+            const currentTodoIndex = 0
+            // 2. Mark the todo as complete
+            const updatedDot = Object.assign({}, dotArray[currentTodoIndex])
+            updatedDot.x = event.pageX
+            updatedDot.y = event.pageY
+            // 3. Update the todo list with the updated todo
+            const newDots = dotArray.slice()
+            newDots[currentTodoIndex] = updatedDot
+            setDotArray(newDots)
+         }
+         handleMarkComplete()
+         // createDots1111()
+      } catch {
+         //
+      }
+   }
 
    return (
       <canvas
          ref={canvasRef}
+         onMouseMove={onMouseMove}
          className='w-full h-screen absolute top-0 bottom-0 right-0 left-0'
-         height={1000}
-         width={1000}
+         height={1500}
+         width={1500}
       ></canvas>
    )
 }
 
 export default Canvas
+// https://github.com/bscottnz/portfolio-site/blob/main/src/heroCanvas.js
