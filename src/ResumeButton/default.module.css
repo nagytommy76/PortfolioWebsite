@@ -77,7 +77,7 @@
 .btn:hover .iElement::after {
    width: 15px;
    left: 80%;
-   animation: move 3s infinite;
+   animation: moveLeft 3s infinite;
 }
 
 @keyframes move {
@@ -86,6 +86,18 @@
    }
    50% {
       transform: translateX(5px);
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
+
+@keyframes moveLeft {
+   0% {
+      transform: translateX(0);
+   }
+   50% {
+      transform: translateX(-10px);
    }
    100% {
       transform: translateX(0);
