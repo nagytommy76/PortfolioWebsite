@@ -44,8 +44,8 @@ const Navbar = () => {
                className='
                text-white
                bg-neutral-800 bg-opacity-60 shadow-md h-[75px] w-full fixed top-0
-                  flex flex-wrap flex-row content-center justify-around z-50
-                  sm:h-screen sm:bg-opacity-100 sm:flex-col sm:justify-center               
+               flex flex-wrap flex-row content-center justify-around z-50
+               sm:h-screen sm:bg-opacity-100 sm:flex-col sm:justify-center               
                '
             >
                {isMobile && (
@@ -58,8 +58,8 @@ const Navbar = () => {
                <section
                   className='
                   w-1/3 lg:w-1/3 xl:w-[30%] flex flex-wrap flex-row content-center justify-evenly items-center text-xl z-50
-                     sm:w-screen sm:flex-col sm:h-[50%] sm:text-center
-                     '
+                  sm:w-screen sm:flex-col sm:h-[50%] sm:text-center
+                  '
                >
                   <Link href={'#home'}>
                      <Image
