@@ -13,12 +13,24 @@ const Facebook = () => {
    return (
       <SingleProject
          headText='Facebook clone app'
-         description='Full stack (MERN) applikáció (MongoDB, Express.Js, React, Node.js, TypeScript).'
+         description='
+            Full stack (MERN) applikáció (MongoDB, Express.Js, React, Node.js, TypeScript). 
+            Posztokat hozhatunk létre, valamint kommentelhetünk, válaszolhatunk a kommentekre és reakció gombok segítségével értékelhetjük. :)
+            '
          githubHref='https://github.com/nagytommy76/FacebookClone'
          projectHref='#projects'
          isUnderDev
          ProjectImageComponent={
-            <ProjectImage folder='CompStoreMERN' imageNames={['welcome_cwzwvv']} alt='Facebook clone image' />
+            <ProjectImage
+               folder='FacebookClone'
+               imageNames={[
+                  'comments2_lhwsym',
+                  'singleComment_e0krgj',
+                  'comments_sdydel',
+                  'singlePost_kpes0g',
+               ]}
+               alt='Facebook clone image'
+            />
          }
       >
          <>
