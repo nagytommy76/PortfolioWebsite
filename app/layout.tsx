@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import NtLogo2 from '@/assets/NTLogo2.jpg'
 
 import Footer from './components/footer'
 
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
    description: 'Tamás Nagy portfolio wesite',
    category: 'Portfolio wesite',
    creator: 'Nagy Tamás (Thomas Nagy)',
-   icons: [{ rel: 'icon', url: NtLogo2.src }],
+   icons: { icon: '/NTLogo2.jpg' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
