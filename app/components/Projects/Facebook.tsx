@@ -12,7 +12,7 @@ import NextJsIcon from '@/icons/nextjs.svg'
 const Facebook = () => {
    return (
       <SingleProject
-         headText='Facebook clone app'
+         headText='Facebook clone'
          description='
             Full stack (MERN) applikáció (MongoDB, Express.Js, React, Node.js, TypeScript). 
             Posztokat hozhatunk létre, valamint kommentelhetünk, válaszolhatunk a kommentekre és reakció gombok segítségével értékelhetjük. :)
@@ -24,10 +24,10 @@ const Facebook = () => {
             <ProjectImage
                folder='FacebookClone'
                imageNames={[
-                  'comments2_lhwsym',
-                  'singleComment_e0krgj',
-                  'comments_sdydel',
-                  'singlePost_kpes0g',
+                  'Post_1_2023.11.13_nqe8wb',
+                  'Post2_2023.11.13_cjh3x4',
+                  'Comments_2022.11.13_voqhdn',
+                  'Delete_2023.11.13_ldnpxx',
                ]}
                alt='Facebook clone image'
             />
