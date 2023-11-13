@@ -135,7 +135,7 @@ class Dot {
       this.canvas.height = window.innerHeight
       this.canvas.style.display = 'block'
       this.ctx = ctx
-      this.ctx.lineWidth = 0.3
+      this.ctx.lineWidth = 0.2
       this.ctx.strokeStyle = 'rgb(81, 162, 233)'
       this.colorDot = [
          'rgb(81, 162, 233)',
@@ -155,6 +155,7 @@ class Dot {
 }
 
 const Canvas = () => {
+   const [isMobile, setIsMobile] = useState<boolean>(false)
    const canvasRef = useRef<HTMLCanvasElement>(null)
    const [htmlCanvas, setHtmlCanvas] = useState<HTMLCanvasElement | null>(null)
    const [ctxState, setCtxState] = useState<CanvasRenderingContext2D | null>(null)
@@ -177,6 +178,11 @@ const Canvas = () => {
          color: 'rgb(200, 200, 200)',
       },
    ])
+
+   useEffect(() => {
+      window.addEventListener('resize', () => setIsMobile(window.innerWidth <= 500))
+      return () => window.removeEventListener('resize', () => setIsMobile(window.innerWidth <= 500))
+   }, [])
 
    const InitDots = useCallback(
       (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
@@ -221,7 +227,7 @@ const Canvas = () => {
       if (htmlCanvas == null) return
       if (ctxState == null) return
       createDots()
-      const draw = setInterval(createDots, 1000 / 40)
+      const draw = setInterval(createDots, 33)
       return () => clearInterval(draw)
    }, [htmlCanvas, ctxState, createDots])
 
@@ -248,14 +254,16 @@ const Canvas = () => {
       } catch {}
    }
 
-   return (
+   return !isMobile ? (
       <canvas
          ref={canvasRef}
          onMouseMove={onMouseMove}
          className='w-full h-screen absolute top-0 bottom-0 right-0 left-0 z-0'
-         height={1500}
-         width={1500}
+         height={window.innerHeight}
+         width={window.innerWidth}
       ></canvas>
+   ) : (
+      <></>
    )
 }
 

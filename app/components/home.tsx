@@ -1,5 +1,5 @@
 import DefaultButton from '@/src/ResumeButton/DefaultButton'
-// import Canvas2 from '@/src/Canvas/Canvas'
+import Canvas2 from '@/src/Canvas/Canvas'
 
 const home = () => {
    return (
