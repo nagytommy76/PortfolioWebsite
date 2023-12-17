@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
+import useImagePlaceholder from '@/src/ImagePlaceholder/useImagePlaceholder'
 
 import Modal from '@mui/material/Modal'
 import CloseIcon from '@mui/icons-material/Close'
@@ -16,6 +17,7 @@ const ProjectImage: React.FC<{
 }> = ({ folder, imageNames, alt, imageHeight = 600, imageWidth = 700 }) => {
    const [openImage, setOpenImage] = useState<boolean>(false)
    const [currentPicIndex, setCurrentPicIndex] = useState<number>(0)
+   const convertToBase64 = useImagePlaceholder()
 
    const handleOpen = () => {
       setOpenImage(true)
@@ -68,6 +70,7 @@ const ProjectImage: React.FC<{
                      className='h-screen object-scale-down'
                      src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[currentPicIndex]}`}
                      alt={alt}
+                     placeholder={`data:image/svg+xml;base64,${convertToBase64(1920, 1080)}`}
                      width={1920}
                      height={1080}
                   />
@@ -83,6 +86,7 @@ const ProjectImage: React.FC<{
                className=''
                src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[0]}`}
                alt={alt}
+               placeholder={`data:image/svg+xml;base64,${convertToBase64(600, 700)}`}
                width={imageWidth}
                height={imageHeight}
             />
