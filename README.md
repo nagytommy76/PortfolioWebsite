@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tamas Nagy - Portfolio
 
-## Getting Started
+Welcome to my portfolio website! This site showcases my projects, skills, and experience in web development and design.
 
-First, run the development server:
+## About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+I'm Tamas Nagy, a passionate web developer based in Hungary. I specialize in front-end development and have experience with various technologies and frameworks.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Portfolio Sections
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Explore a selection of my recent projects:
 
-## Learn More
+-  **Facebook clone**: A social media application with real-time notification and chat functionality using: Next.js 14.
+-  **Computer Store**: React.js based computer parts webshop with filter/search/admin functionality.
 
-To learn more about Next.js, take a look at the following resources:
+### Skills
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here are some of my key skills and technologies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-  HTML5
+-  CSS3 / SASS
+-  JavaScript (ES6+)
+-  TypeScript
+-  React.js
+-  Node.js
+-  Git / GitHub
 
-## Deploy on Vercel
+## Get in Touch
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to reach out to me via email at [nagytommy76@gmail.com](mailto:nagytommy76@gmail.com) or connect with me on [LinkedIn](<[https://www.linkedin.com/in/yourlinkedinprofile](https://www.linkedin.com/in/tamasnagy93/)>).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## View My Portfolio
+
+Visit my portfolio website: [https://www.nagytamas93.hu/](https://www.nagytamas93.hu/)
