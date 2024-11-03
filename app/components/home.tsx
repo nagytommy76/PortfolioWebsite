@@ -9,7 +9,7 @@ const home = () => {
          '
       >
          <h1 className='text-6xl mb-5 text-center sm:text-3xl sm:mb-2'>
-            <span className='text-amber-400'>Nagy Tamás</span> vagyok.
+            <span className='text-main-text'>Nagy Tamás</span> vagyok.
          </h1>
          <h1 className='text-6xl mb-10 text-center sm:text-3xl sm:mb-14'>Frontend fejlesztő.</h1>
          <div className='h-20 self-center'>

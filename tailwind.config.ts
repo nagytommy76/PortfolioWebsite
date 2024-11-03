@@ -15,7 +15,9 @@ const config: Config = {
             'main-background': "url('/assets/background1.jpg')",
          },
          colors: {
-            'main-bg': '#292929',
+            'main-bg': '#212121',
+            'main-text': '#fb8500',
+            'footer-color': '#111111',
          },
          keyframes: {
             bounce: {

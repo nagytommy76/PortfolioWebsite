@@ -22,7 +22,7 @@ const Navbar = () => {
             <MenuIcon
                onClick={handleOpenNavbar}
                fontSize='large'
-               className={`z-[50] fixed right-5 top-5 text-amber-500 ${isMobile ? 'flex' : 'md:hidden'}`}
+               className={`z-[50] fixed right-5 top-5 text-main-text ${isMobile ? 'flex' : 'md:hidden'}`}
             />
          )}
          <CSSTransition
@@ -43,7 +43,7 @@ const Navbar = () => {
                ref={navbarRef}
                className='
                text-white
-               bg-neutral-800 bg-opacity-60 shadow-md h-[75px] w-full fixed top-0
+               bg-footer-color bg-opacity-60 shadow-md h-[75px] w-full fixed top-0
                flex flex-wrap flex-row content-center justify-around z-50
                sm:h-screen sm:bg-opacity-100 sm:flex-col sm:justify-center               
                '
@@ -52,7 +52,7 @@ const Navbar = () => {
                   <CloseIcon
                      onClick={handleCloseNavbar}
                      fontSize='large'
-                     className={`fixed right-5 top-5 text-amber-500 ${isMobile ? 'flex' : 'md:hidden'}`}
+                     className={`fixed right-5 top-5 text-main-text ${isMobile ? 'flex' : 'md:hidden'}`}
                   />
                )}
                <section
@@ -74,6 +74,7 @@ const Navbar = () => {
                   </Link>
                   <HoverLink onClick={handleCloseNavbar} href='#about' linkText='Rólam' />
                   <HoverLink onClick={handleCloseNavbar} href='#projects' linkText='Projektek' />
+                  <HoverLink onClick={handleCloseNavbar} href='#github' linkText='GitHub' />
                   <HoverLink onClick={handleCloseNavbar} href='#certificates' linkText='Tanúsítványok' />
                </section>
                <section

@@ -13,7 +13,7 @@ const LinkButton: React.FC<{ displayText: string; href: string; iconElement?: an
          className='
             transition-all duration-[380ms] min-w-[100px] max-w-[180px] cursor-pointer text-lg font-semibold tracking-[5px] pt-1 pb-2 
             uppercase relative flex flex-wrap flex-col justify-center
-            after:absolute after:content-[""] after:bg-amber-500 after:h-[2px] after:w-full after:bottom-1 after:block after:-z-[1]
+            after:absolute after:content-[""] after:bg-main-text after:h-[2px] after:w-full after:bottom-1 after:block after:-z-[1]
             after:transition-all hover:after:h-full hover:text-black
             sm:text-sm
             '

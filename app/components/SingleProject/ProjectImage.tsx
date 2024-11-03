@@ -49,19 +49,19 @@ const ProjectImage: React.FC<{
             <section>
                <CloseIcon
                   onClick={handleClose}
-                  className='absolute right-5 top-5 cursor-pointer text-amber-600'
+                  className='absolute right-5 top-5 cursor-pointer text-main-text'
                   fontSize='large'
                   sx={{ fontSize: 55 }}
                />
                <ArrowBackIosNewIcon
                   onClick={previousImage}
-                  className='absolute left-5 top-[50%] cursor-pointer text-amber-600'
+                  className='absolute left-5 top-[50%] cursor-pointer text-main-text'
                   fontSize='large'
                   sx={{ fontSize: 55 }}
                />
                <ArrowForwardIosIcon
                   onClick={nextImage}
-                  className='absolute right-5 top-[50%] cursor-pointer text-amber-600'
+                  className='absolute right-5 top-[50%] cursor-pointer text-main-text'
                   sx={{ fontSize: 55 }}
                />
                <div className='w-screen h-screen flex items-center justify-center'>

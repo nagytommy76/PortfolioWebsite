@@ -6,7 +6,7 @@ const hoverLink: React.FC<{ linkText: string; href: string; onClick?: () => void
    onClick,
 }) => {
    return (
-      <Link onClick={onClick} className='transition-colors  hover:text-amber-400' href={href}>
+      <Link onClick={onClick} className='transition-colors  hover:text-main-text' href={href}>
          {linkText}
       </Link>
    )
