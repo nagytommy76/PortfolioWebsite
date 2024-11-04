@@ -22,8 +22,8 @@
 .btn:hover {
    letter-spacing: 0.2rem;
    padding: 1.1rem 3.1rem;
-   background: #fcd34d;
-   color: #fcd34d;
+   background: #fb8500;
+   color: #fb8500;
    animation: box 3s infinite;
 }
 
@@ -51,7 +51,7 @@
    height: 8px;
    left: 80%;
    top: -2px;
-   border: 2px solid #fcd34d;
+   border: 2px solid #fb8500;
    background: #272822;
    transition: 0.2s;
 }
@@ -69,7 +69,7 @@
    height: 8px;
    left: 20%;
    bottom: -2px;
-   border: 2px solid #fcd34d;
+   border: 2px solid #fb8500;
    background: #272822;
    transition: 0.2s;
 }
@@ -109,7 +109,7 @@
       box-shadow: #27272c;
    }
    50% {
-      box-shadow: 0 0 25px #fcd34d;
+      box-shadow: 0 0 25px #fb8500;
    }
    100% {
       box-shadow: #27272c;

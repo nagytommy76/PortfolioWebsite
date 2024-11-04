@@ -3,5 +3,26 @@
 @tailwind utilities;
 
 .active {
-   @apply transition-colors  text-amber-400;
+   @apply transition-colors  text-main-text;
+}
+
+/* width */
+::-webkit-scrollbar {
+   width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   @apply bg-main-bg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   @apply bg-main-text;
+   border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: #555;
 }
