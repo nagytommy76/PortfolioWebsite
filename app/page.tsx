@@ -7,7 +7,6 @@ import Projects from './projects/page'
 import GitHub from './components/GitHub/page'
 import Certificates from './certs/page'
 const Navbar = dynamic(() => import('@/components/Navbar/navbar'), { ssr: false })
-
 export default function Home() {
    return (
       <>
