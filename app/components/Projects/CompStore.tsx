@@ -17,7 +17,7 @@ const CompStore = () => {
          A felhasználók a regisztráció és email cím megerősítése után bejelentkezhetnek, majd vásárolhatnak különböző termékeket (pl. CPU, VGA, HDD, SSD, RAM).
          '
          githubHref='https://github.com/nagytommy76/ComputerStoreMERN'
-         projectHref='https://computerstorebackend.firebaseapp.com/'
+         projectHref='https://computer-store-frontend-phi.vercel.app/'
          isReverse
          ProjectImageComponent={
             <ProjectImage
