@@ -18,8 +18,7 @@ const Facebook = () => {
             Posztokat hozhatunk létre, valamint kommentelhetünk, válaszolhatunk a kommentekre és reakció gombok segítségével értékelhetjük. :)
             '
          githubHref='https://github.com/nagytommy76/FacebookClone'
-         projectHref='#projects'
-         isUnderDev
+         projectHref='https://facebookclone-production-8185.up.railway.app/'
          ProjectImageComponent={
             <ProjectImage
                folder='FacebookClone'
