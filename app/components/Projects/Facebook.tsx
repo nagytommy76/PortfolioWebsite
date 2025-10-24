@@ -13,9 +13,13 @@ const Facebook = () => {
    return (
       <SingleProject
          headText='Facebook clone'
+         // description='
+         //    Full stack (MERN) applikáció (MongoDB, Express.Js, React, Node.js, TypeScript).
+         //    Posztokat hozhatunk létre, valamint kommentelhetünk, válaszolhatunk a kommentekre és reakció gombok segítségével értékelhetjük. :)
+         //    '
          description='
-            Full stack (MERN) applikáció (MongoDB, Express.Js, React, Node.js, TypeScript). 
-            Posztokat hozhatunk létre, valamint kommentelhetünk, válaszolhatunk a kommentekre és reakció gombok segítségével értékelhetjük. :)
+            Users can create posts, comment on them, reply to comments, and use reaction buttons to interact.
+            Real-time chat and notifiactions are also implemented using WebSockets (Socket.IO).
             '
          githubHref='https://github.com/nagytommy76/FacebookClone'
          projectHref='https://facebookclone-production-8185.up.railway.app/'
