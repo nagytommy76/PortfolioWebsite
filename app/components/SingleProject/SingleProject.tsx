@@ -1,5 +1,8 @@
 import LinkButton from '@/src/LinkButton/LinkButton'
+import MoreInfoBtn from '@/src/MoreInfoBtn/MoreInfoBtn'
 import GitHubIcon from '@/icons/github.svg'
+
+import Typography from '@mui/material/Typography'
 
 const SingleProject: React.FC<{
    ProjectImageComponent: React.ReactNode
@@ -24,7 +27,7 @@ const SingleProject: React.FC<{
 }) => {
    return (
       <div
-         className={`mt-32 w-full flex flex-wrap ${
+         className={`mt-32 w-full min-h-[370px] flex flex-wrap ${
             isReverse ? 'flex-row-reverse' : ''
          } justify-between sm:flex-col sm:mt-16`}
       >
@@ -41,16 +44,24 @@ const SingleProject: React.FC<{
             )}
          </div>
          <div className={`w-1/3 flex flex-col justify-between sm:w-[95%] sm:mt-3 sm:mx-auto `}>
-            <h1 className='text-5xl font-semibold tracking-normal sm:text-3xl sm:mb-3'>{headText}</h1>
-            <p className='font-normal sm:text-sm sm:mb-4 sm:font-normal sm:text-justify'>{description}</p>
-            <span className='h-24 flex flex-col justify-between'>
+            <Typography variant='h3' className='text-5xl font-semibold tracking-normal sm:text-3xl sm:mb-3'>
+               {headText}
+            </Typography>
+            <Typography
+               variant='body1'
+               className='font-normal sm:text-sm sm:mb-4 sm:font-normal sm:text-justify'
+            >
+               {description}
+            </Typography>
+            <div className='h-32 flex flex-col justify-between'>
                {!isUnderDev ? (
-                  <LinkButton displayText='Élő verzió' href={projectHref} />
+                  <LinkButton displayText='Live demo' href={projectHref} />
                ) : (
                   <p className='text-2xl sm:text-base'>{isUnderDevText}</p>
                )}
                <LinkButton displayText='GitHub' href={githubHref} iconElement={GitHubIcon} />
-            </span>
+               <MoreInfoBtn displayText='More info' headText={headText} />
+            </div>
          </div>
       </div>
    )
