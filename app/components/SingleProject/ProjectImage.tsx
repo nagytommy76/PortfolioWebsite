@@ -71,8 +71,8 @@ const ProjectImage: React.FC<{
                      src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[currentPicIndex]}`}
                      alt={alt}
                      placeholder={`data:image/svg+xml;base64,${convertToBase64(1920, 1080)}`}
-                     width={1920}
-                     height={1080}
+                     width={1200}
+                     height={800}
                   />
                </div>
                <p className='text-4xl text-white absolute top-10 left-[50%]'>
@@ -80,17 +80,15 @@ const ProjectImage: React.FC<{
                </p>
             </section>
          </Modal>
-         <div className=''>
-            <Image
-               onClick={handleOpen}
-               className=''
-               src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[0]}`}
-               alt={alt}
-               placeholder={`data:image/svg+xml;base64,${convertToBase64(600, 700)}`}
-               width={imageWidth}
-               height={imageHeight}
-            />
-         </div>
+         <Image
+            onClick={handleOpen}
+            className='h-full'
+            src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[0]}`}
+            alt={alt}
+            placeholder={`data:image/svg+xml;base64,${convertToBase64(600, 700)}`}
+            width={imageWidth}
+            height={imageHeight}
+         />
       </>
    )
 }
