@@ -1,4 +1,7 @@
 import Image from 'next/image'
+
+import StackIcon from '@/src/StackIcon/StackIcon'
+import MoreInfoBtn from '@/src/MoreInfo/MoreInfoBtn'
 import SingleProject from '@/components/SingleProject/SingleProject'
 import ProjectImage from '@/components/SingleProject/ProjectImage'
 
@@ -7,6 +10,9 @@ import ReactIcon from '@/icons/react.svg'
 import NodeIcon from '@/icons/nodejs.svg'
 import ExpressIcon from '@/icons/express.svg'
 import MongoDBIcon from '@/icons/mongodb.svg'
+import Docker from '@/icons/docker.svg'
+import Jest from '@/icons/Jest.png'
+import Material from '@/icons/material.png'
 
 const CompStore = () => {
    return (
@@ -33,6 +39,40 @@ const CompStore = () => {
                   'email_lfrjji',
                ]}
                alt='Computer Store image'
+            />
+         }
+         MoreInfoBtn={
+            <MoreInfoBtn
+               Features={
+                  <>
+                     <li>Registration, login, and secure JWT cookie-based sessions.</li>
+                     <li>Email verification after registration.</li>
+                     <li>Password reminder via email.</li>
+                     <li>Product listing and detail views.</li>
+                     <li>roduct search and category filters (for example: filter by CPU socket)</li>
+                     <li>Add, remove, and update cart items.</li>
+                     <li>Order summary and mock payment with Stripe.</li>
+                     <li>Admin dashboard for managing products and orders</li>
+                     <li>Emails sent after registration, password reset, and successful order.</li>
+                     <li>Templated emails using Handlebars and sent through Resend.</li>
+                     <li>Unit and integration tests with React Testing Library and Jest.</li>
+                  </>
+               }
+               TechStack={
+                  <>
+                     <StackIcon src={TypeScript} alt='TypeScript' displayText='TypeScript' />
+                     <StackIcon src={ReactIcon} alt='ReactIcon' displayText='React.js' />
+                     <StackIcon src={NodeIcon} alt='NodeIcon' displayText='Node.js' />
+                     <StackIcon src={ExpressIcon} alt='ExpressIcon' displayText='Express.js' />
+                     <StackIcon src={MongoDBIcon} alt='MongoDBIcon' displayText='MongoDB' />
+                     <StackIcon src={Docker} alt='Docker' displayText='Docker' />
+                     <StackIcon src={Material.src} alt='Material' displayText='Material UI' />
+                     <StackIcon src={Jest.src} alt='Jest' displayText='Jest' />
+                  </>
+               }
+               headText='Computer Store webshop'
+               embeddedLink='https://www.youtube.com/embed/jFU0n80CqDA?si=d0S-JmWISGy1VuXZ'
+               videoTitle='Computer Store Webshop - Full Stack Project Overview'
             />
          }
       >
