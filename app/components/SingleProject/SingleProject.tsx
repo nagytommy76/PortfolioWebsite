@@ -1,5 +1,4 @@
 import LinkButton from '@/src/LinkButton/LinkButton'
-import MoreInfoBtn from '@/src/MoreInfoBtn/MoreInfoBtn'
 import GitHubIcon from '@/icons/github.svg'
 
 import Typography from '@mui/material/Typography'
@@ -10,6 +9,7 @@ const SingleProject: React.FC<{
    githubHref: string
    description: string
    headText: string
+   MoreInfoBtn?: React.ReactNode
    isReverse?: boolean
    children?: React.ReactNode
    isUnderDev?: boolean
@@ -20,6 +20,7 @@ const SingleProject: React.FC<{
    githubHref,
    description,
    headText,
+   MoreInfoBtn,
    isReverse = false,
    isUnderDev = false,
    isUnderDevText = 'Fejlesztés alatt...',
@@ -53,14 +54,14 @@ const SingleProject: React.FC<{
             >
                {description}
             </Typography>
-            <div className='h-32 flex flex-col justify-between'>
+            <div className='h-32 flex flex-col gap-2 justify-center sm:items-center'>
                {!isUnderDev ? (
                   <LinkButton displayText='Live demo' href={projectHref} />
                ) : (
                   <p className='text-2xl sm:text-base'>{isUnderDevText}</p>
                )}
                <LinkButton displayText='GitHub' href={githubHref} iconElement={GitHubIcon} />
-               <MoreInfoBtn displayText='More info' headText={headText} />
+               {MoreInfoBtn}
             </div>
          </div>
       </div>
