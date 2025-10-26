@@ -13,14 +13,17 @@ import MongoDBIcon from '@/icons/mongodb.svg'
 import Docker from '@/icons/docker.svg'
 import Jest from '@/icons/Jest.png'
 import Material from '@/icons/material.png'
+import Resend from '@/icons/resend.png'
+import Redux from '@/icons/redux.png'
 
 const CompStore = () => {
    return (
       <SingleProject
-         headText='Computer Store webáruház'
+         headText='Computer Store'
          description='
-         Full stack (MERN) applikáció (MongoDB, Express.Js, React, Node.js, TypeScript).
-         A felhasználók a regisztráció és email cím megerősítése után bejelentkezhetnek, majd vásárolhatnak különböző termékeket (pl. CPU, VGA, HDD, SSD, RAM).
+         Full-stack e-commerce web application built from scratch using React, Express.js and TypeScript.
+         It showcases my skills in frontend and backend development, including authentication,
+         secure payments, and automated email handling.
          '
          githubHref='https://github.com/nagytommy76/ComputerStoreMERN'
          projectHref='https://computer-store-frontend-phi.vercel.app/'
@@ -61,13 +64,17 @@ const CompStore = () => {
                TechStack={
                   <>
                      <StackIcon src={TypeScript} alt='TypeScript' displayText='TypeScript' />
+                     <StackIcon src={Material.src} alt='Material' displayText='Material UI' />
                      <StackIcon src={ReactIcon} alt='ReactIcon' displayText='React.js' />
+                     <StackIcon src={Redux.src} alt='Redux' displayText='Redux' />
+
                      <StackIcon src={NodeIcon} alt='NodeIcon' displayText='Node.js' />
                      <StackIcon src={ExpressIcon} alt='ExpressIcon' displayText='Express.js' />
                      <StackIcon src={MongoDBIcon} alt='MongoDBIcon' displayText='MongoDB' />
-                     <StackIcon src={Docker} alt='Docker' displayText='Docker' />
-                     <StackIcon src={Material.src} alt='Material' displayText='Material UI' />
+
                      <StackIcon src={Jest.src} alt='Jest' displayText='Jest' />
+                     <StackIcon src={Resend.src} alt='Resend' displayText='Resend' />
+                     <StackIcon src={Docker} alt='Docker' displayText='Docker' />
                   </>
                }
                headText='Computer Store webshop'
