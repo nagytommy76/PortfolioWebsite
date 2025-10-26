@@ -61,7 +61,7 @@ const Facebook = () => {
                TechStack={
                   <>
                      <StackIcon src={ReactIcon} alt='React' displayText='React' />
-                     <StackIcon src={Next2} alt='Next.js' displayText='' />
+                     <StackIcon src={Next2} alt='Next.js' displayText='Next.js' />
                      <StackIcon src={TypeScript} alt='TypeScript' displayText='TypeScript' />
                      <StackIcon src={Material.src} alt='Material' displayText='Material UI' />
                      <StackIcon src={Firebase.src} alt='Firebase' displayText='Firebase' />
