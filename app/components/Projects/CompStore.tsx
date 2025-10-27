@@ -78,7 +78,7 @@ const CompStore = () => {
                   </>
                }
                headText='Computer Store webshop'
-               embeddedLink='https://www.youtube.com/embed/jFU0n80CqDA?si=d0S-JmWISGy1VuXZ'
+               embeddedLink='https://www.youtube.com/embed/XcMVXI88avQ?si=AQmIW_Mbs8ncEV1S'
                videoTitle='Computer Store Webshop - Full Stack Project Overview'
             />
          }
