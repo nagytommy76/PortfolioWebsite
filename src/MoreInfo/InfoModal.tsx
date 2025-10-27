@@ -54,7 +54,7 @@ export default function InfoModal({
                      src={embeddedLink}
                      title={videoTitle ? videoTitle : 'Project presentation video'}
                      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                     referrerpolicy='strict-origin-when-cross-origin'
+                     referrerPolicy='strict-origin-when-cross-origin'
                      // allowfullscreen
                   ></iframe>
                   <section className='w-full flex flex-row items-center justify-center mt-7 gap-7 sm:flex-col sm:text-sm'>
