@@ -72,10 +72,10 @@ const Navbar = () => {
                         sizes='(max-width: 500px) 200px'
                      />
                   </Link>
-                  <HoverLink onClick={handleCloseNavbar} href='#about' linkText='Rólam' />
-                  <HoverLink onClick={handleCloseNavbar} href='#projects' linkText='Projektek' />
+                  <HoverLink onClick={handleCloseNavbar} href='#about' linkText='About' />
+                  <HoverLink onClick={handleCloseNavbar} href='#projects' linkText='Projects' />
                   <HoverLink onClick={handleCloseNavbar} href='#github' linkText='GitHub' />
-                  <HoverLink onClick={handleCloseNavbar} href='#certificates' linkText='Tanúsítványok' />
+                  <HoverLink onClick={handleCloseNavbar} href='#certificates' linkText='Certificates' />
                </section>
                <section
                   className='
