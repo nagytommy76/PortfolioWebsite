@@ -6,19 +6,22 @@ import VUE from '@/icons/vue.svg'
 import Laravel from '@/icons/laravel.svg'
 import MySql from '@/icons/mysql.svg'
 import SASS from '@/icons/sass.svg'
+import PHP from '@/icons/php.png'
 
 const Meatball = () => {
    return (
       <SingleProject
-         headText='Húsgolyó Étterem'
+         headText='Meatball Restaurant'
          description='
-            Full stack applikáció (Laravel, MySQL, PHP, Vue.js, SCSS).
-            A weboldal egy kitalált étterem honlapja, ahol lehetőség van ételeket rendelni.
+            Full stack web applcation (Laravel, MySQL, PHP, Vue.js, SCSS).
+            Online food ordering system for a restaurant.
+            Features: menu browsing, shopping cart, user authentication, admin panel for managing menu items and orders.
+            Responsive design for optimal viewing on various devices.
             '
          githubHref='https://github.com/nagytommy76/MeatBallProject'
          projectHref=''
          isUnderDev
-         isUnderDevText='Az app átmenetileg nem elérhető'
+         isUnderDevText='The app isn not deployed.'
          isReverse
          ProjectImageComponent={
             <ProjectImage
@@ -38,9 +41,10 @@ const Meatball = () => {
          }
       >
          <>
-            <Image className='mr-1' src={VUE} alt='VUE.js' width={40} height={40} />
-            <Image className='mr-1' src={Laravel} alt='ReactIcon' width={40} height={40} />
+            <Image className='mr-1' src={PHP.src} alt='PHP' width={40} height={40} />
+            <Image className='mr-1' src={Laravel} alt='Laravel' width={40} height={40} />
             <Image className='mr-1' src={MySql} alt='MySql' width={40} height={40} />
+            <Image className='mr-1' src={VUE} alt='VUE.js' width={40} height={40} />
             <Image src={SASS} alt='SASS' width={40} height={40} />
          </>
       </SingleProject>

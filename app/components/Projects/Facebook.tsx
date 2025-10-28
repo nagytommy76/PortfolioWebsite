@@ -46,16 +46,16 @@ const Facebook = () => {
             <MoreInfoBtn
                Features={
                   <>
-                     <li>🔐 Login / Register with JWT authentication (secure cookies)</li>
-                     <li>👥 Add / remove friends</li>
-                     <li>📝 Create posts with images</li>
-                     <li>👍 React to posts (like, funny, angry, dislike etc...)</li>
-                     <li>💬 Comment on posts and reply infinitely</li>
-                     <li>❤️ Like / dislike comments</li>
-                     <li>✏️ Edit or delete your posts and comments</li>
-                     <li>🔔 Real-time Notifications for post interactions and comments</li>
-                     <li>💬 Real-time chat between users using WebSockets (Socket.io)</li>
-                     <li>🟢 User presence tracking (last seen, online status) with Redis cache</li>
+                     <li>Login / Register with JWT authentication (secure cookies)</li>
+                     <li>Add / remove friends</li>
+                     <li>Create posts with images</li>
+                     <li>React to posts (like, funny, angry, dislike etc...)</li>
+                     <li>Comment on posts and reply infinitely</li>
+                     <li>Like / dislike comments</li>
+                     <li>Edit or delete your posts and comments</li>
+                     <li>Real-time Notifications for post interactions and comments</li>
+                     <li>Real-time chat between users using WebSockets (Socket.io)</li>
+                     <li>User presence tracking (last seen, online status) with Redis cache</li>
                   </>
                }
                TechStack={
