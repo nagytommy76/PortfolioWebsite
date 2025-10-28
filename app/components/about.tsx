@@ -11,7 +11,7 @@ const about = () => {
          id='about'
          className='pt-20 md:h-screen text-slate-50 bg-hero bg-no-repeat bg-cover bg-center sm:min-h-screen sm:pt-6'
       >
-         <MainText text='Rólam' />
+         <MainText text='About Me' />
          <div
             className='
             max-w-6xl mx-auto h-4/5 flex flex-row flex-wrap content-center items-center justify-center
@@ -39,7 +39,7 @@ const about = () => {
                   <DefaultButton
                      isBlank={true}
                      href='https://drive.google.com/drive/folders/1-kAtpIRgO-xTEtikH-HyR4HCJm_HuhFu?usp=sharing'
-                     text='Önéletrajz'
+                     text='CV'
                   />
                </div>
             </div>

@@ -8,12 +8,13 @@ const home = () => {
          className='text-slate-50 tracking-widest font-light h-screen w-full flex flex-wrap flex-col justify-center content-center
          '
       >
+         <h1 className='text-6xl mb-5 text-center sm:text-3xl sm:mb-2'>Hello there! 👋</h1>
          <h1 className='text-6xl mb-5 text-center sm:text-3xl sm:mb-2'>
-            <span className='text-main-text'>Nagy Tamás</span> vagyok.
+            I&apos;m <span className='text-main-text'>Tamás Nagy</span>.
          </h1>
-         <h1 className='text-6xl mb-10 text-center sm:text-3xl sm:mb-14'>Frontend fejlesztő.</h1>
+         <h1 className='text-6xl mb-10 text-center sm:text-3xl sm:mb-14'>Frontend developer.</h1>
          <div className='h-20 self-center'>
-            <DefaultButton text='Tudj meg többet' href='#about' />
+            <DefaultButton text='More info' href='#about' />
          </div>
          {/* <Canvas2 /> */}
       </section>
