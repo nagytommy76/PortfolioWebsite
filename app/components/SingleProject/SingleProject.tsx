@@ -58,7 +58,7 @@ const SingleProject: React.FC<{
                {!isUnderDev ? (
                   <LinkButton displayText='Live demo' href={projectHref} />
                ) : (
-                  <p className='text-2xl sm:text-base'>{isUnderDevText}</p>
+                  <p className='text-xl sm:text-base'>{isUnderDevText}</p>
                )}
                <LinkButton displayText='GitHub' href={githubHref} iconElement={GitHubIcon} />
                {MoreInfoBtn}
