@@ -6,7 +6,7 @@ const Footer = () => {
          <div className='mb-3 flex flex-row w-40 justify-evenly items-center'>
             <ContactIcons />
          </div>
-         <h1 className='text-2xl'>Nagy Tamás &copy; 2024.</h1>
+         <h1 className='text-2xl'>Nagy Tamás &copy; 2025.</h1>
       </footer>
    )
 }

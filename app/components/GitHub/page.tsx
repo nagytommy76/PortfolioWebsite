@@ -6,7 +6,7 @@ export default function page() {
       <section id='github' className='min-h-fit max-w-6xl mx-auto mb-16 pt-20 text-white'>
          <MainText text='GitHub' />
          <p className='text-base leading-8 text-center mt-10 sm:text-sm sm:mb-10 sm:leading-6'>
-            2020 Közepe óta folyamatosan fejlesztem magam különböző pet projektek elkészítésével.
+            Since mid-2020, I have been continuously improving myself by creating various pet projects.
          </p>
          <div className='mt-4 w-full flex flex-wrap justify-evenly items-center gap-4'>
             <div className='cursor-pointer'>

@@ -5,7 +5,7 @@ import MainText from '../components/includes/MainText'
 const Certificates = () => {
    return (
       <section id='certificates' className='min-h-fit max-w-6xl mx-auto mb-16 pt-20 text-white '>
-         <MainText text='Tanúsítványok' />
+         <MainText text='Certificates' />
          <div className='mt-14 w-full flex flex-wrap justify-evenly items-center'>
             <div className='cursor-pointer transition-all hover:scale-[98%] sm:mb-5'>
                <ProjectImage

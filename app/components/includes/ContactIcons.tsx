@@ -12,10 +12,10 @@ const ContactIcons = () => {
    const [tooltipText, setTooltipText] = useState<string>('nagytommy76@gmail.com')
    const handleCopy = async () => {
       await navigator.clipboard.writeText('nagytommy76@gmail.com')
-      setTooltipText('Az email címem sikeresen másolva :)')
+      setTooltipText('The email has been copied to clipboard!')
       setTimeout(() => {
          setTooltipText('nagytommy76@gmail.com')
-      }, 2500)
+      }, 3000)
    }
 
    return (
@@ -44,7 +44,7 @@ const ContactIcons = () => {
             className='cursor-pointer transition hover:-translate-y-1'
             target='_blank'
          >
-            <Tooltip title={'Önéletrajz'} placement='bottom' arrow>
+            <Tooltip title={'CV'} placement='bottom' arrow>
                <ContactPageIcon fontSize='large' />
             </Tooltip>
          </Link>
