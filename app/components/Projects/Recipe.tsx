@@ -12,6 +12,7 @@ import Redux from '@/icons/redux.png'
 const Recipe = () => {
    return (
       <SingleProject
+         isReverse
          headText='Recipe Finder'
          description='Recipe & nutrition explorer — search recipes, videos and fast-food menu items (calories & nutrients) using the Spoonacular API.'
          githubHref='https://github.com/nagytommy76/ReactRecipeFinder'

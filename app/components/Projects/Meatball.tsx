@@ -21,8 +21,7 @@ const Meatball = () => {
          githubHref='https://github.com/nagytommy76/MeatBallProject'
          projectHref=''
          isUnderDev
-         isUnderDevText='The app isn not deployed.'
-         isReverse
+         isUnderDevText='The app is not deployed.'
          ProjectImageComponent={
             <ProjectImage
                folder='Meatball'

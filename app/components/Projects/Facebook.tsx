@@ -34,6 +34,8 @@ const Facebook = () => {
             <ProjectImage
                folder='FacebookClone'
                imageNames={[
+                  'facebook_chat1_ih33of',
+                  'facebook_chat_u7nwq2',
                   'Post_1_2023.11.13_nqe8wb',
                   'Post2_2023.11.13_cjh3x4',
                   'Comments_2022.11.13_voqhdn',
