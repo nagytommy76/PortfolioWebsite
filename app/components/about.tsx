@@ -24,16 +24,17 @@ const about = () => {
                   src={MeImage}
                   height={250}
                   width={250}
-                  alt='Nagy Tamás Képe'
+                  alt='Nagy Tamás picture'
                />
                <p className='text-xl leading-8 text-left mb-5 sm:text-sm sm:mb-10 sm:leading-6'>
-                  Jelenlegi tudásom nagy részét autodidakta módon, Udemy kurzusok segítségével, valamint hobby
-                  projectek elkészítésével szereztem. Körülbelül 2 éve foglalkozom rendszeresen programozással
-                  szabadidőmben. Kezdőként Forntend (React) területen szeretnék elhelyezkedni, illetve
-                  bővíteni tudásomat, de Fullstack lehetőségek is érdekelnek (MERN stack). A jövőt tekintve
-                  szeretném mélyíteni a tudásom Node.js-ben (Express.js) és MongoDB-ben, valamint szeretnék
-                  megismerkedni a mobilfejlesztéssel is (ReactNative vagy Flutter). Az angol tudásom
-                  szövegértésben, olvasásban jó, de a kommunikációban fejlődnöm kell.
+                  I’m a self-taught frontend developer who learns by building — since 2020 I’ve been coding
+                  almost every day and I keep a steady rhythm of ~800–900 commits a year. I specialize in
+                  JavaScript and TypeScript, and I build full-stack projects with React, Next.js, Node.js and
+                  Mongo/Mongoose. <br /> I am actively seeking to advance my career within the frontend
+                  development industry. <br /> I am eager to apply my skills to tackle challenging projects
+                  and advance my professional growth. <br />
+                  I&apos;m interested in learning new technologies and continuously improving my skills to
+                  become a better developer.
                </p>
                <div className='h-20'>
                   <DefaultButton
