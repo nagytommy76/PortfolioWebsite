@@ -17,7 +17,7 @@ import MongoDB from '@/icons/mongodb.svg'
 import Next2 from '@/icons/next.svg'
 import Firebase from '@/icons/firebase.png'
 import Redis from '@/icons/redis.png'
-import Socket from '@/icons/socket.io.png'
+import Socket from '@/icons/SocketIo.png'
 import Material from '@/icons/material.png'
 
 const Facebook = () => {

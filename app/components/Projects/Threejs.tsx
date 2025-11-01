@@ -9,7 +9,7 @@ import TypeScript from '@/icons/typescript.svg'
 import Tailwind from '@/icons/tailwindcss.svg'
 import ReactIcon from '@/icons/react.svg'
 import Blender from '@/icons/blender.png'
-import ThreeIcon from '@/icons/three.js.png'
+import ThreeIcon from '@/icons/ThreeJs.png'
 import GSAP from '@/icons/gsap.jpg'
 
 export default function Threejs() {
