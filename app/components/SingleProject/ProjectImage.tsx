@@ -43,8 +43,8 @@ const ProjectImage: React.FC<{
          <Modal
             open={openImage}
             onClose={setOpenImage}
-            aria-labelledby='child-modal-title'
-            aria-describedby='child-modal-description'
+            aria-labelledby='image-modal'
+            aria-describedby='image-modal'
          >
             <section>
                <CloseIcon
@@ -71,8 +71,8 @@ const ProjectImage: React.FC<{
                      src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[currentPicIndex]}`}
                      alt={alt}
                      placeholder={`data:image/svg+xml;base64,${convertToBase64(1920, 1080)}`}
-                     width={1200}
-                     height={800}
+                     width={2000}
+                     height={1200}
                   />
                </div>
                <p className='text-4xl text-white absolute top-10 left-[50%]'>
@@ -82,7 +82,7 @@ const ProjectImage: React.FC<{
          </Modal>
          <Image
             onClick={handleOpen}
-            className='h-full'
+            className='h-full object-cover cursor-pointer'
             src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[0]}`}
             alt={alt}
             placeholder={`data:image/svg+xml;base64,${convertToBase64(600, 700)}`}

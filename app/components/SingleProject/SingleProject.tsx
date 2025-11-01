@@ -32,7 +32,7 @@ const SingleProject: React.FC<{
             isReverse ? 'flex-row-reverse' : ''
          } justify-between sm:flex-col sm:mt-16`}
       >
-         <div className='relative w-auto cursor-pointer transition-all hover:scale-[98%]'>
+         <div className='relative w-auto max-h-[425px] cursor-pointer transition-all hover:scale-[98%]'>
             {ProjectImageComponent}
             {children && (
                <div
