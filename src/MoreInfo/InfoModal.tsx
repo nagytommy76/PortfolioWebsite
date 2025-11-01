@@ -62,7 +62,7 @@ export default function InfoModal({
                         <Typography variant='h4' className='text-center mb-5'>
                            🧩 Features
                         </Typography>
-                        <ul className='flex flex-col gap-2 list-inside'>{Features}</ul>
+                        <ul className='flex flex-col gap-2 list-inside list-disc'>{Features}</ul>
                      </div>
                      <div>
                         <Typography variant='h4' className='text-center mb-5'>
