@@ -9,13 +9,14 @@ export const LinkButtonClass = `
    sm:text-sm
 `
 
-const LinkButton: React.FC<{ displayText: string; href: string; iconElement?: any }> = ({
+const LinkButton: React.FC<{ displayText: string; href: string; iconElement?: any; className?: string }> = ({
    displayText,
    href,
    iconElement,
+   className = '',
 }) => {
    return (
-      <Link target='_blank' href={href} className={LinkButtonClass}>
+      <Link target='_blank' href={href} className={LinkButtonClass + ' ' + className}>
          <p className='w-full flex flex-row flex-wrap items-center content-center justify-center'>
             {displayText}
             {iconElement && (

@@ -40,7 +40,7 @@ const about = () => {
                   <DefaultButton
                      isBlank={true}
                      href='https://drive.google.com/drive/folders/1-kAtpIRgO-xTEtikH-HyR4HCJm_HuhFu?usp=sharing'
-                     text='CV'
+                     text='Resume'
                   />
                </div>
             </div>
