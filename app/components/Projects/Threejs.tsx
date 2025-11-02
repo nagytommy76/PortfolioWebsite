@@ -18,7 +18,7 @@ export default function Threejs() {
          headText='Blender and Three.js Porfolio'
          description="
          I've always wanted to dive into 3D programming, so I decided to make a portfolio using Blender and Three.js.
-         The app is not published yet, but you can check out the code and run locally on GitHub.
+         The app is not published yet, it's in early beta stage, but you can check out the code and run locally on GitHub.
          "
          githubHref='https://github.com/nagytommy76/threejs-portfolio'
          projectHref=''

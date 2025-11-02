@@ -21,6 +21,7 @@ const ContactIcons = () => {
    return (
       <>
          <Link
+            aria-label='Tamas Nagy LinkedIn profile'
             className='transition hover:-translate-y-1'
             target='_blank'
             href='https://www.linkedin.com/in/tamasnagy93'
@@ -28,6 +29,7 @@ const ContactIcons = () => {
             <LinkedInIcon fontSize='large' />
          </Link>
          <Link
+            aria-label='Tamas Nagy GitHub profile'
             className='transition hover:-translate-y-1'
             target='_blank'
             href='https://github.com/nagytommy76'
@@ -40,6 +42,7 @@ const ContactIcons = () => {
             </Tooltip>
          </p>
          <Link
+            aria-label='Tamas Nagy CV, Resume'
             href={'https://drive.google.com/drive/folders/1-kAtpIRgO-xTEtikH-HyR4HCJm_HuhFu?usp=sharing'}
             className='cursor-pointer transition hover:-translate-y-1'
             target='_blank'
