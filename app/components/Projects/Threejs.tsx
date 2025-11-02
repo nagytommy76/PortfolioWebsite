@@ -27,14 +27,22 @@ export default function Threejs() {
          ProjectImageComponent={
             <ProjectImage
                folder='Three.js'
-               imageNames={['PortfolioFinal_ibrrd0']}
-               alt='Computer Store image'
+               imageNames={[
+                  'PortfolioRender',
+                  'threejs_room1',
+                  'threejs_room2',
+                  'threejs_room3',
+                  'threejs_room4',
+                  'threejs_room5',
+               ]}
+               alt='three.js project images'
             />
          }
          MoreInfoBtn={
             <MoreInfoBtn
                Features={
                   <>
+                     <li>The Project is under development and it is in early beta stage.</li>
                      <li>Using Blender to create a personal room 3D model</li>
                      <li>Using Three.js to create a 3D scene</li>
                      <li>Using animation library: GSAP</li>
@@ -51,7 +59,7 @@ export default function Threejs() {
                   </>
                }
                headText='Blender and Three.js Portfolio - Project Overview'
-               embeddedLink='https://www.youtube.com/embed/XcMVXI88avQ?si=AQmIW_Mbs8ncEV1S'
+               embeddedLink='https://www.youtube.com/embed/yV4zU0I-Dc0?si=1onFSuhXZxVcxIPU'
                videoTitle='Blender and Three.js Portfolio Overview'
             />
          }
