@@ -14,7 +14,8 @@ const ProjectImage: React.FC<{
    alt: string
    imageWidth?: number
    imageHeight?: number
-}> = ({ folder, imageNames, alt, imageHeight = 600, imageWidth = 700 }) => {
+   className?: string
+}> = ({ folder, imageNames, alt, imageHeight = 600, imageWidth = 700, className = '' }) => {
    const [openImage, setOpenImage] = useState<boolean>(false)
    const [currentPicIndex, setCurrentPicIndex] = useState<number>(0)
    const convertToBase64 = useImagePlaceholder()
@@ -82,7 +83,7 @@ const ProjectImage: React.FC<{
          </Modal>
          <Image
             onClick={handleOpen}
-            className='h-full object-cover cursor-pointer'
+            className={`h-full object-cover cursor-pointer ${className}`}
             src={`https://res.cloudinary.com/domsczfqu/image/upload/v1660310038/nagytamas93/${folder}/${imageNames[0]}`}
             alt={alt}
             placeholder={`data:image/svg+xml;base64,${convertToBase64(600, 700)}`}
